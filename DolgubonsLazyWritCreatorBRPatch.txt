@@ -1,0 +1,9 @@
+## Title: BR Patch for Dolgubon's Lazy Writ Crafter
+## Description: Addon de Compatibilidade do Dolgubon's Lazy Writ Crafter com a Tradução EsoBR.
+## APIVersion: 100027
+## Author: @rodrigo5
+## Version: 0.0.1
+## AddOnVersion: 00001
+## DependsOn: DolgubonsLazyWritCreator
+
+$(language).lua
