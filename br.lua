@@ -257,30 +257,30 @@ end
 function WritCreater.langWritNames() -- Vital
 	-- Exact!!!  I know for german alchemy writ is Alchemistenschrieb - so ["G"] = schrieb, and ["A"]=Alchemisten
 	local names = {
-	["G"] = "Encomenda",
-	[CRAFTING_TYPE_ENCHANTING] 		= "Encantamento",
-	[CRAFTING_TYPE_BLACKSMITHING] 	= "Ferreiro",
-	[CRAFTING_TYPE_CLOTHIER] 		= "Tecidos",
-	[CRAFTING_TYPE_PROVISIONING] 	= "Provedor",
-	[CRAFTING_TYPE_WOODWORKING] 	= "Marceneiro",
-	[CRAFTING_TYPE_ALCHEMY] 		= "Alquimista",
-	[CRAFTING_TYPE_JEWELRYCRAFTING] = "Joalheria",
+		["G"] = "Encomenda",
+		[CRAFTING_TYPE_ENCHANTING] 		= "Encantamento",
+		[CRAFTING_TYPE_BLACKSMITHING] 	= "Ferreiro",
+		[CRAFTING_TYPE_CLOTHIER] 		= "Tecidos",
+		[CRAFTING_TYPE_PROVISIONING] 	= "Provedor",
+		[CRAFTING_TYPE_WOODWORKING] 	= "Marceneiro",
+		[CRAFTING_TYPE_ALCHEMY] 		= "Alquimista",
+		[CRAFTING_TYPE_JEWELRYCRAFTING] = "Joalheria",
 	}
 	return names
 end
 
 function WritCreater.langMasterWritNames()
 	local names = {
-	["M"]               			= "masterful",
-	["M1"]               			= "mestre",
-	[CRAFTING_TYPE_ALCHEMY]      	= "mistura",
-	[CRAFTING_TYPE_ENCHANTING]    	= "glyph",
-	[CRAFTING_TYPE_PROVISIONING]  	= "пир",
-	["plate"]            			= "латы",
-	["tailoring"]          			= "тканевые доспехи",
-	["leatherwear"]          		= "кожаные доспехи",
-	["weapon"]            			= "оружие",
-	["shield"]            			= "щит",
+		["M"]               			= "masterful",
+		["M1"]               			= "mestre",
+		[CRAFTING_TYPE_ALCHEMY]      	= "mistura",
+		[CRAFTING_TYPE_ENCHANTING]    	= "glifo",
+		[CRAFTING_TYPE_PROVISIONING]  	= "feast",
+		["plate"]            			= "plate",
+		["tailoring"]          			= "alfaiataria",
+		["leatherwear"]          		= "leatherwear",
+		["weapon"]            			= "arma",
+		["shield"]            			= "escudo",
 	}
 return names
 
@@ -288,13 +288,13 @@ end
 
 function WritCreater.writCompleteStrings() -- Vital for translation
 	local strings = {
-	["place"] = "Положить предметы в ящик",
-	["sign"] = "Подписать декларацию",
-	["masterPlace"] = "Я закончил",
-	["masterSign"] = "<Закончить работу.>",
-	["masterStart"] = "<Принять заказ.>",
-	["Rolis Hlaalu"] = "Ролис Хлаалу", -- This is the same in most languages but ofc chinese and japanese
-	["Deliver"] = "Доставить",
+		["place"] 			= "Coloque as mercadorias",
+		["sign"] 			= "Sign the Manifest",
+		["masterPlace"] 	= "I've finished the",
+		["masterSign"] 		= "<Finish the job.>",
+		["masterStart"] 	= "<Aceite o contrato.>",
+		["Rolis Hlaalu"] 	= "Rolis Hlaalu", -- This is the same in most languages but ofc chinese and japanese
+		["Deliver"] 		= "Entregue",
 	}
 	return strings
 end
@@ -308,44 +308,44 @@ local craftInfo =
 		{
 			["pieces"] = --exact!!
 			{
-				[1] = "robe",
-				[2] = "jerkin",
-				[3] = "shoes",
-				[4] = "gloves",
-				[5] = "hat",
-				[6] = "breeches",
-				[7] = "epaulet",
-				[8] = "sash",
-				[9] = "jack",
-				[10]= "boots",
-				[11]= "bracers",
-				[12]= "helmet",
-				[13]= "guards",
-				[14]= "cops",
-				[15]= "belt",
+				 [1] = "Túnica", --robe
+				 [2] = "Gibão", --jerkin
+				 [3] = "Sapatos", --shoes
+				 [4] = "Luvas", --gloves
+				 [5] = "Chapéu", --hat
+				 [6] = "Calções", --breeches
+				 [7] = "Palas", --epaulet
+				 [8] = "Faixa", --sash
+				 [9] = "Brigantina", --jack
+				[10] = "Botas", --boots
+				[11] = "Braçadeiras", --bracers
+				[12] = "Capacete", --helmet
+				[13] = "Guardas", --guards
+				[14] = "Ombreiras", --cops
+				[15] = "Cinto", --belt
 			},
 			["match"] = --exact!!! This is not the material, but rather the prefix the material gives to equipment. e.g. Homespun Robe, Linen Robe
 			{
-				[1] = "Homespun", --lvtier one of mats
-				[2] = "Linen",	--l
-				[3] = "Cotton",
-				[4] = "Spidersilk",
-				[5] = "Ebonthread",
-				[6] = "Kresh",
-				[7] = "Ironthread",
-				[8] = "Silverweave",
-				[9] = "Shadowspun",
-				[10]= "Ancestor",
-				[11]= "Rawhide",
-				[12]= "Hide",
-				[13]= "Leather",
-				[14]= "Full-Leather",
-				[15]= "Fell",
-				[16]= "Brigandine",
-				[17]= "Ironhide",
-				[18]= "Superb",
-				[19]= "Shadowhide",
-				[20]= "Rubedo",
+				 [1] = "Artesana", --Homespun
+				 [2] = "Linho",	--Linen
+				 [3] = "Algodão", --Cotton
+				 [4] = "Sedaracna", --Spidersilk
+				 [5] = "Fio de Ébano", --Ebonthread
+				 [6] = "Kresh",
+				 [7] = "Fio Ferroso", --Ironthread
+				 [8] = "Fio de Prata", --Silverweave
+				 [9] = "Sombrafiada", --Shadowspun
+				[10] = "Ancestor", --Seda Ancestral
+				[11] = "Couro Cru", --Rawhide
+				[12] = "Pele", --Hide
+				[13] = "Couro", --Leather
+				[14] = "Couro-Completo", --Full-Leather
+				[15] = "Couro Ímpio", --Fell
+				[16] = "Brigandina", --Brigandine
+				[17] = "Pele de Ferro", --Ironhide
+				[18] = "Pele Soberba", --Superb
+				[19] = "Umbrapele", --Shadowhide
+				[20] = "Couro Rubro", --Rubedo
 			},
 			
 		},
@@ -353,33 +353,33 @@ local craftInfo =
 		{
 			["pieces"] = --exact!!
 			{
-				[1] = "axe",
-				[2] = "mace",
-				[3] = "sword",
-				[4] = "battle",
-				[5] = "maul",
-				[6] = "greatsword",
-				[7] = "dagger",
-				[8] = "cuirass",
-				[9] = "sabatons",
-				[10] = "gauntlets",
-				[11] = "helm",
-				[12] = "greaves",
-				[13] = "pauldron",
-				[14] = "girdle",
+				 [1] = "Machado", --axe
+				 [2] = "Maça", --mace
+				 [3] = "Espada", --sword
+				 [4] = "Machado de Batalha", --battle axe
+				 [5] = "Malho", --maul
+				 [6] = "Montante", --greatsword
+				 [7] = "Adaga", --dagger
+				 [8] = "Couraça", --cuirass
+				 [9] = "Escarpes", --sabatons
+				[10] = "Manoplas", --gauntlets
+				[11] = "Elmo", --helm
+				[12] = "Grevas", --greaves
+				[13] = "Espaldas", --pauldron
+				[14] = "Cinturão", --girdle
 			},
 			["match"] = --exact!!! This is not the material, but rather the prefix the material gives to equipment. e.g. Iron Axe, Steel Axe
 			{
-				[1] = "Iron",
-				[2] = "Steel",
-				[3] = "Orichalc",
-				[4] = "Dwarven",
-				[5] = "Ebon",
-				[6] = "Calcinium",
-				[7] = "Galatite",
-				[8] = "Quicksilver",
-				[9] = "Voidsteel",
-				[10]= "Rubedite",
+				 [1] = "Ferro", --Iron
+				 [2] = "Aço", --Steel
+				 [3] = "Oricalco", --Orichalcum
+				 [4] = "Enânica", --Dwarven
+				 [5] = "Ébano", --Ebony
+				 [6] = "Calcínio", --Calcinium
+				 [7] = "Galatita", --Galatite
+				 [8] = "Mercúrio", --Quicksilver
+				 [9] = "Aço do Vácuo", --Voidsteel
+				[10] = "Rubedita", --Rubedite
 			},
 			
 		},
@@ -387,25 +387,25 @@ local craftInfo =
 		{
 			["pieces"] = --Exact!!!
 			{
-				[1] = "bow",
-				[3] = "inferno",
-				[4] = "Ice",
-				[5] = "lightning",
-				[6] = "restoration",
-				[2] = "shield",
+				[1] = "Arco", --bow
+				[3] = "Infernal", --inferno
+				[4] = "Gelo", --Ice
+				[5] = "Raio", --lightning
+				[6] = "Restauração", --restoration
+				[2] = "Escudo", --shield
 			},
 			["match"] = --exact!!! This is not the material, but rather the prefix the material gives to equipment. e.g. Maple Bow. Oak Bow.
 			{
-				[1] = "Maple",
-				[2] = "Oak",
-				[3] = "Beech",
-				[4] = "Hickory",
-				[5] = "Yew",
-				[6] = "Birch",
-				[7] = "Ash",
-				[8] = "Mahogany",
-				[9] = "Nightwood",
-				[10] = "Ruby",
+				 [1] = "Bordo", --Maple
+				 [2] = "Carvalho", --Oak
+				 [3] = "Faia", --Beech
+				 [4] = "Nogueira", --Hickory
+				 [5] = "Teixo", --Yew
+				 [6] = "Bétula", --Birch
+				 [7] = "Cinzas", --Ash
+				 [8] = "Mogno", --Mahogany
+				 [9] = "Madeira da Noite", --Nightwood
+				[10] = "Feixo Rubi", --Ruby Ash
 			},
 			
 		},
@@ -413,17 +413,17 @@ local craftInfo =
 		{
 			["pieces"] = --Exact!!!
 			{
-				[1] = "ring",
-				[2] = "necklace",
+				[1] = "anel",
+				[2] = "colar",
 
 			},
 			["match"] = --exact!!! This is not the material, but rather the prefix the material gives to equipment. e.g. Maple Bow. Oak Bow.
 			{
-				[1] = "Pewter", -- 1
-				[2] = "Copper", -- 26
-				[3] = "Silver", -- CP10
-				[4] = "Electrum", --CP80
-				[5] = "Platinum", -- CP150
+				[1] = "Peltre", -- 1 (Pewter)
+				[2] = "Cobre", -- 26 (Copper)
+				[3] = "Prata", -- CP10 (Silver)
+				[4] = "Electrum", --CP80 (Electrum)
+				[5] = "Platina", -- CP150 (Platinum)
 			},
 
 		},
@@ -431,70 +431,70 @@ local craftInfo =
 		{
 			["pieces"] = --exact!!
 			{ --{String Identifier, ItemId, positive or negative}
-				{"disease", 45841,2},
-				{"foulness", 45841,1},
-				{"absorb stamina", 45833,2},
-				{"absorb magicka", 45832,2},
-				{"absorb health", 45831,2},
-				{"frost resist",45839,2},
-				{"frost",45839,1},
-				{"feat", 45836,2},
-				{"stamina recovery", 45836,1},
-				{"hardening", 45842,1},
-				{"crushing", 45842,2},
-				{"onslaught", 68342,2},
-				{"defense", 68342,1},
-				{"shielding",45849,2},
-				{"bashing",45849,1},
-				{"poison resist",45837,2},
-				{"poison",45837,1},
-				{"spell harm",45848,2},
-				{"magical",45848,1},
-				{"magicka recovery", 45835,1},
-				{"spell cost", 45835,2},
-				{"shock resist",45840,2},
-				{"shock",45840,1},
-				{"health recovery",45834,1},
-				{"decrease health",45834,2},
-				{"weakening",45843,2},
-				{"weapon",45843,1},
-				{"boost",45846,1},
-				{"speed",45846,2},
-				{"flame resist",45838,2},
-				{"flame",45838,1},
-				{"decrease physical", 45847,2},
-				{"increase physical", 45847,1},
-				{"stamina",45833,1},
-				{"health",45831,1},
-				{"magicka",45832,1}
+				{"Resistência ", 45841,2},
+				{"Infeccioso", 45841,1},
+				{"Absorver Vigor", 45833,2},
+				{"Absorver Mágicka", 45832,2},
+				{"Absorção de Saúde", 45831,2},
+				{"Resistência ao Álgido",45839,2},
+				{"Álgido",45839,1},
+				{"Custo de Vigor", 45836,2},
+				{"Recuperação de Vigor", 45836,1},
+				{"Robustez", 45842,1},
+				{"Esmagador", 45842,2},
+				{"Investida", 68342,2},
+				{"Defesa", 68342,1},
+				{"Blindagem",45849,2},
+				{"contra-ataque",45849,1},
+				{"Resistência ao Venenoso",45837,2},
+				{"Dano Venenoso",45837,1},
+				{"Dano Mágico",45848,2},
+				{"mágica",45848,1},
+				{"Recuperação de Mágicka", 45835,1},
+				{"Custo de Feitiços", 45835,2},
+				{"Resistência ao Elétrico",45840,2},
+				{"Dano Elétrico",45840,1},
+				{"Recuperação de Saúde",45834,1},
+				{"Redução de Saúde",45834,2},
+				{"Enfraquecer",45843,2},
+				{"Arma",45843,1},
+				{"Alquimista",45846,1},
+				{"Aceleração",45846,2},
+				{"Resistência ao Ígneo",45838,2},
+				{"Dano Ígneo",45838,1},
+				{"Redução de Dano Físico", 45847,2},
+				{"Aumento de Dano Físico", 45847,1},
+				{"Vigor",45833,1},
+				{"Saúde",45831,1},
+				{"Mágicka",45832,1}
 			},
 			["match"] = --exact!!! The names of glyphs. The prefix (in English) So trifling glyph of magicka, for example
 			{
-				[1] = {"trifling", 45855},
-				[2] = {"inferior",45856},
-				[3] = {"petty",45857},
-				[4] = {"slight",45806},
-				[5] = {"minor",45807},
-				[6] = {"lesser",45808},
-				[7] = {"moderate",45809},
-				[8] = {"average",45810},
-				[9] = {"strong",45811},
-				[10]= {"major",45812},
-				[11]= {"greater",45813},
-				[12]= {"grand",45814},
-				[13]= {"splendid",45815},
+				[1] = {"insignificante", 45855},
+				[2] = {"inferior",45856}, -- inferior?
+				[3] = {"pequeno",45857},
+				[4] = {"leve",45806},
+				[5] = {"menor",45807},
+				[6] = {"inferior",45808}, -- baixo?
+				[7] = {"moderado",45809},
+				[8] = {"médio",45810},
+				[9] = {"forte",45811},
+				[10]= {"maior",45812},
+				[11]= {"maioral",45813},
+				[12]= {"grandioso",45814},
+				[13]= {"esplêndido",45815},
 				[14]= {"monumental",45816},
-				[15]= {"truly",{68341,68340,},},
-				[16]= {"superb",{64509,64508,},},
+				[15]= {"Verdadeiramente",{68341,68340,},},
+				[16]= {"Esplêndido",{64509,64508,},},
 				
 			},
 			["quality"] = -- !!!ДЛЯ РУН!!!
 			{
-				{"обычное",45850},
-				{"отличное",45851},
-				{"превосходное",45852},
-				{"эпическое",45853},
-				{"легендарное",45854},
+				{"normal",45850},
+				{"Fino",45851},
+				{"Superior",45852},
+				{"Épico",45853},
+				{"Lendário",45854},
 				{"", 45850} -- default, if nothing is mentioned. Default should be Ta.
 			}
 		},
@@ -505,7 +505,7 @@ local craftInfo =
 end
 
 function WritCreater.masterWritQuality() -- Vital . This is probably not necessary, but it stays for now because it works
-	return {{"Эпическое",4},{"Легендарное",5}} -- !!!ДЛЯ КРАФТА ЭКИПИРОВКИ!!!
+	return {{"Épico",4},{"Lendário",5}} -- !!!ДЛЯ КРАФТА ЭКИПИРОВКИ!!!
 end
 
 
@@ -515,9 +515,9 @@ function WritCreater.langEssenceNames() -- Vital
 
 local essenceNames =  
 	{
-		[1] = "Око", --health
-		[2] = "Дени", --stamina
-		[3] = "Макко", --magicka
+		[1] = "Oko", --health
+		[2] = "Deni", --stamina
+		[3] = "Makko", --magicka
 	}
 	return essenceNames
 end
@@ -526,23 +526,22 @@ function WritCreater.langPotencyNames() -- Vital
 	--exact!! Also, these are all the positive runestones - no negatives needed.
 	local potencyNames = 
 	{
-		[1] = "Джора", --Lowest potency stone lvl
-		[2] = "Пораде",
-		[3] = "Джера",
-		[4] = "Джеджора",
-		[5] = "Одра",
-		[6] = "Поджора",
-		[7] = "Эдора",
-		[8] = "Джейра", -- Джаэра, Джаера
-		[9] = "Пора",
-		[10]= "Денара",
-		[11]= "Рера",
-		[12]= "Дерадо",
-		[13]= "Рекура",
-		[14]= "Кура",
-		[15]= "Реджера",
-		[16]= "Репора", --v16 potency stone
-		
+		[1] = "Jora", --Lowest potency stone lvl
+		[2] = "Porade",
+		[3] = "Jera",
+		[4] = "Jejora",
+		[5] = "Odra",
+		[6] = "Pojora",
+		[7] = "Edora",
+		[8] = "Jaera",
+		[9] = "Pora",
+		[10]= "Denara",
+		[11]= "Rera",
+		[12]= "Derado",
+		[13]= "Rekura",
+		[14]= "Kura",
+		[15]= "Rejera",
+		[16]= "Repora", --v16 potency stone
 	}
 	return potencyNames
 end
@@ -601,12 +600,12 @@ local exceptions =
 		["corrected"] = "epaulet",
 	},
 	[8] = {
-		["original"] = "rings",
-		["corrected"] = "ring",
+		["original"] = "aneis",
+		["corrected"] = "anel",
 	},
 	[9] = {
-		["original"] = "necklaces",
-		["corrected"] = "necklace",
+		["original"] = "colares",
+		["corrected"] = "colar",
 	},
 	[10] = {
 		["original"] = "добыть",
@@ -650,11 +649,11 @@ end
 
 function WritCreater.langTutorial(i)
 	local t = {
-		[5]="Вам следует знать ещё несколько вещей.\nПервое, команда /dailyreset подскажет вам\nсколько времени осталось до сброса ежедневных заданий.",
-		[4]="Наконец, вы также можете выключить или\nвключить этот аддон отдельно для каждой профессии.\nПо умолчанию, он включён для всех профессий.\nЕсли вы хотите отключить некоторые, загляните в меню настроек.",
-		[3]="Далее вам следует выбрать, хотите ли вы видеть\nэто окно, когда используете ремесленные станки.\nОкно подскажет вам, как много материалов потребуется для выполнения заказа, а также, сколько материалов у вас уже имеется.",
-		[2]="Первая настройка определяет\nхотите ли вы использовать Автосоздание.\nЕсли включено, как только вы откроете ремесленный станок, аддон начнёт создание нужных предметов.",
-		[1]="Добро пожаловать в Dolgubon's Lazy Writ Crafter!\nВ первую очередь вам нужно сделать несколько настроек.\n Вы можете изменить настройки\n в любое время в меню настроек.",
+		[5]="Há também algumas coisas que você deveria saber.\nPrimeiro, /dailyreset é um comando do chat vai dizer\nquanto tempo falta até a próxima reinicialização diária do servidor.",
+		[4]="Finalmente, você também pode optar por desativar ou\native este addon para cada profissão.\nPor padrão, todas as profissões estão ativadas.\nSe você deseja desativar alguns, por favor, verifique as configurações.",
+		[3]="Em seguida, você precisa escolher se deseja ver essa\njanela ao usar uma estação de criação.\nA janela mostrará quantos materiais o contrato precisa, bem como quantos você tem atualmente.",
+		[2]="A primeira configuração a escolher é se você\nquer usar o AutoCraft.\nAo ativado, quando você entra em uma estação de criação, o addon vai começar a criar.",
+		[1]="Bem-vindo ao Dolgubon's Lazy Writ Crafter!\nHá algumas configurações que você deve fazer primeiro.\n Você pode alterar as configurações a qualquer\nmomento no menu de configurações.",
 	}
 	return t[i]
 end
@@ -662,17 +661,17 @@ end
 function WritCreater.langTutorialButton(i,onOrOff) -- sentimental and short please. These must fit on a small button
 	local tOn = 
 	{
-		[1]="По умолчанию",
-		[2]="Вкл",
-		[3]="Показывать",
-		[4]="Продолжить",
-		[5]="Завершить",
+		[1]="Usar o Padrão",
+		[2]="Ativado",
+		[3]="Mostrar",
+		[4]="Continue",
+		[5]="Finalizar",
 	}
 	local tOff=
 	{
-		[1]="Продолжить",
-		[2]="Выкл",
-		[3]="Не показывать",
+		[1]="Continue",
+		[2]="Desativado",
+		[3]="Não mostrar",
 	}
 	if onOrOff then
 		return tOn[i]
@@ -682,9 +681,15 @@ function WritCreater.langTutorialButton(i,onOrOff) -- sentimental and short plea
 end
 
 function WritCreater.langStationNames()
-	return
-	{["Кузница"] = 1, ["Портняжный станок"] = 2, 
-	 ["Стол для зачарования"] = 3,["Алхимическая станция"] = 4, ["Огонь для приготовления пищи"] = 5, ["Столярный верстак"] = 6, ["Ювелирная станция"] = 7, }
+	return {
+		["Estação de Ferraria"] = 1, 
+		["Estação de Alfaiataria"] = 2,
+		["Mesa de Encantamento"] = 3,
+		["Estação de Alquimia"] = 4, 
+		["Fogueira"] = 5, 
+		["Estação de Marcenaria"] = 6, 
+		["Estação de Joalheria"] = 7, 
+	}
 end
 
 -- What is this??! This is just a fun 'easter egg' that is never activated on easter.
@@ -886,7 +891,7 @@ function WritCreater.langWritRewardBoxes () return {
 	[CRAFTING_TYPE_CLOTHIER] = "ранец портного",
 	[CRAFTING_TYPE_WOODWORKING] = "футляр столяра",
 	[CRAFTING_TYPE_JEWELRYCRAFTING] = "шкатулка ювелира",
-	[8] = "партия",
+	[8] = "Carregamento",
 }
 end
 
