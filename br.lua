@@ -257,13 +257,13 @@ end
 function WritCreater.langWritNames() -- Vital
 	-- Exact!!!  I know for german alchemy writ is Alchemistenschrieb - so ["G"] = schrieb, and ["A"]=Alchemisten
 	local names = {
-		["G"] = "Encomenda",
+		["G"] = "Ordens",
 		[CRAFTING_TYPE_ENCHANTING] 		= "Encantamento",
-		[CRAFTING_TYPE_BLACKSMITHING] 	= "Ferreiro",
-		[CRAFTING_TYPE_CLOTHIER] 		= "Tecidos",
-		[CRAFTING_TYPE_PROVISIONING] 	= "Provedor",
-		[CRAFTING_TYPE_WOODWORKING] 	= "Marceneiro",
-		[CRAFTING_TYPE_ALCHEMY] 		= "Alquimista",
+		[CRAFTING_TYPE_BLACKSMITHING] 	= "Ferraria",
+		[CRAFTING_TYPE_CLOTHIER] 		= "Alfaiataria",
+		[CRAFTING_TYPE_PROVISIONING] 	= "Cozinha",
+		[CRAFTING_TYPE_WOODWORKING] 	= "Marcenaria",
+		[CRAFTING_TYPE_ALCHEMY] 		= "Alquimia",
 		[CRAFTING_TYPE_JEWELRYCRAFTING] = "Joalheria",
 	}
 	return names
@@ -470,22 +470,22 @@ local craftInfo =
 			},
 			["match"] = --exact!!! The names of glyphs. The prefix (in English) So trifling glyph of magicka, for example
 			{
-				[1] = {"insignificante", 45855},
-				[2] = {"inferior",45856}, -- inferior?
-				[3] = {"pequeno",45857},
-				[4] = {"leve",45806},
-				[5] = {"menor",45807},
-				[6] = {"inferior",45808}, -- baixo?
-				[7] = {"moderado",45809},
-				[8] = {"médio",45810},
-				[9] = {"forte",45811},
-				[10]= {"maior",45812},
-				[11]= {"maioral",45813},
-				[12]= {"grandioso",45814},
-				[13]= {"esplêndido",45815},
-				[14]= {"monumental",45816},
-				[15]= {"Verdadeiramente",{68341,68340,},},
-				[16]= {"Esplêndido",{64509,64508,},},
+				 [1] = {"insignificante", 45855},
+				 [2] = {"inferior",45856}, -- inferior?
+				 [3] = {"pequeno",45857},
+				 [4] = {"leve",45806},
+				 [5] = {"menor",45807},
+				 [6] = {"inferior",45808}, -- baixo?
+				 [7] = {"moderado",45809},
+				 [8] = {"médio",45810},
+				 [9] = {"forte",45811},
+				[10] = {"maior",45812},
+				[11] = {"maioral",45813},
+				[12] = {"grandioso",45814},
+				[13] = {"esplêndido",45815},
+				[14] = {"monumental",45816},
+				[15] = {"Verdadeiramente",{68341,68340,},},
+				[16] = {"Esplêndido",{64509,64508,},},
 				
 			},
 			["quality"] = -- !!!ДЛЯ РУН!!!
