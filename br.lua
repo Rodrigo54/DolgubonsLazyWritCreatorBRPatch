@@ -5,8 +5,8 @@
 -- Addon Creation Date: March 14, 2016
 --
 -- File Name: Languages/default.lua
--- File Description: Russian Localization
--- File translator: @KiriX
+-- File Description: Brazilian Localization
+-- File translator: @rodrigo5
 -- File Creation Date: April 03, 2019
 -----------------------------------------------------------------------------------
 
@@ -37,9 +37,9 @@ local function runeMissingFunction (ta,essence,potency)
 	local text = ""
 	for i = 1, #missing do
 		if i ==1 then
-			text = "|cf60000Глиф не может быть создан. У вас нет ни одной руны "..proper(missing[i])
+			text = "|cf60000Um glifo não pode ser criado. Você não tem runas"..proper(missing[i])
 		else
-			text = text.." или "..proper(missing[i])
+			text = text.." ou "..proper(missing[i])
 		end
 	end
 	return text
@@ -50,149 +50,155 @@ local function dailyResetFunction(till, stamp) 	-- You can translate the followi
 												-- function (till) d(zo_strformat("<<1>> hours and <<2>> minutes until the daily reset.",till["hour"],till["minute"])) end,
 	if till["hour"]==0 then
 		if till["minute"]==1 then
-			return "1 минута до сброса ежедневных заданий!"
+			return "1 minuto para resetar as missões diárias!"
 		elseif till["minute"]==0 then
 			if stamp==1 then
-				return "Ежедневные заданий сбросятся через "..stamp.." секунд!"
+				return "As missões diárias serão resetadas em "..stamp.." segundos!"
 			else
-				return "Серьёзно... Хватит спрашивать. Ты настолько нетерпелив??? Они сбросятся через пару секунд, проклятье. Тупые, так называемые ММОшники. *бур-бур-бур*"
+				return "As missões diárias serão resetadas em alguns segundos! Tenha paciência"
 			end
 		else
-			return till["minute"].." минут до сброса ежедневных заданий!"
+			return till["minute"].." minutos para resetar as missões diárias!"
 		end
 	elseif till["hour"]==1 then
 		if till["minute"]==1 then
-			return till["hour"].." час и "..till["minute"].." минута до сброса ежедневных заданий"
+			return till["hour"].." hora e "..till["minute"].." minuto para resetar as missões diárias!"
 		else
-			return till["hour"].." час и "..till["minute"].." минут до сброса ежедневных заданий"
+			return till["hour"].." hora e "..till["minute"].." minutos para resetar as missões diárias!"
 		end
 	else
 		if till["minute"]==1 then
-			return till["hour"].." часов и "..till["minute"].." минута до сброса ежедневных заданий"
+			return till["hour"].." horas e "..till["minute"].." minuto para resetar as missões diárias!"
 		else
-			return till["hour"].." часов и "..till["minute"].." минут до сброса ежедневных заданий"
+			return till["hour"].." horas e "..till["minute"].." minutos para resetar as missões diárias!"
 		end
 	end 
 end
 
 local function masterWritEnchantToCraft (pat,set,trait,style,qual,mat,writName,Mname,generalName)
-	local partialString = zo_strformat("Создать предмет \"<<t:6>> <<t:1>>\" уровня оч 150, комплекта \"<<t:2>>\" с особенностью \"<<t:3>>\" и в стиле \"<<t:4>>\" с качеством \"<<t:5>>\"",pat,set,trait,style,qual,mat)
+	local partialString = zo_strformat("Criar item \"<<t:6>> <<t:1>>\" уровня оч 150, комплекта \"<<t:2>>\" с особенностью \"<<t:3>>\" и в стиле \"<<t:4>>\" с качеством \"<<t:5>>\"",pat,set,trait,style,qual,mat)
 	return zo_strformat("<<t:2>> <<t:3>> <<t:4>>: <<1>>",partialString,writName,Mname,generalName )
 end
 
 
 WritCreater.strings =
 {
-	["runeReq"] 					= function (essence, potency) return zo_strformat("|c2dff00Создание потребует 1 |rТа|c2dff00, 1 |cffcc66<<1>>|c2dff00 и 1 |c0066ff<<2>>|r", essence, potency) end,
+	["runeReq"] 					= function (essence, potency) return zo_strformat("|c2dff00A fabricação precisa de 1 |rТа|c2dff00, 1 |cffcc66<<1>>|c2dff00 e 1 |c0066ff<<2>>|r", essence, potency) end,
 	["runeMissing"] 				= runeMissingFunction,
-	["notEnoughSkill"]				= "У вас недостаточно высокий уровень навыка, чтобы создать требуемую экипировку",
-	["smithingMissing"] 			= "\n|cf60000У вас недостаточно материалов|r",
-	["craftAnyway"] 				= "Создать что можно",
-	["smithingEnough"] 				= "\n|c2dff00У вас достаточно материалов|r",
-	["craft"] 						= "|c00ff00Создать|r",
-	["crafting"] 					= "|c00ff00Создание...|r",
-	["craftIncomplete"] 			= "|cf60000Создание не может быть завершено.\nВам нужно больше материалов.|r",
-	["moreStyle"] 					= "|cf60000У вас нет ни одного стилевого материала\nдля выбранного стиля|r",
-	["moreStyleSettings"]			= "|cf60000У вас нет ни одного доступного стилевого материала.\nВозможно, вам нужно разрешить использовать больше стилей в меню настроек|r",
-	["moreStyleKnowledge"]			= "|cf60000У вас нет ни одного доступного стилевого материала.\nВозможно, вам нужно изучить больше ремесленных стилей|r",
+	["notEnoughSkill"]				= "Você não tem um nível de habilidade alto o suficiente para criar o equipamento necessário",
+	["smithingMissing"] 			= "\n|cf60000Você não tem materiais suficientes|r",
+	["craftAnyway"] 				= "Crie o que você puder",
+	["smithingEnough"] 				= "\n|c2dff00Você tem materiais suficientes|r",
+	["craft"] 						= "|c00ff00Fabricar|r",
+	["crafting"] 					= "|c00ff00Fabricando...|r",
+	["craftIncomplete"] 			= "|cf60000A fabricação não pôde ser concluída.\nVocê precisa de mais materiais...|r",
+	["moreStyle"] 					= "|cf60000Você não tem material de estilo.\npara o estilo escolhido|r",
+	["moreStyleSettings"]			= "|cf60000Você não tem nenhum material de estilo disponível.\nVocê pode precisar permitir mais estilos nas configurações do addon.|r",
+	["moreStyleKnowledge"]			= "|cf60000Você não tem nenhum material de estilo disponível.\nVocê pode precisar aprender mais estilos de artesanato.|r",
 	["dailyreset"] 					= dailyResetFunction,
-	["complete"] 					= "|c00FF00Заказ выполнен.|r",
-	["craftingstopped"]				= "Создание остановлено. Пожалуйста, проверьте, что аддон создал правильные предметы.",
+	["complete"] 					= "|c00FF00Encomenda concluída.|r",
+	["craftingstopped"]				= "Fabricação parada. Por favor, verifique se o addon criou os itens certos.",
 	["smithingReqM"] 				= function (amount, type, more) return zo_strformat( "Создание потребует <<1>> <<2>> (|cf60000Вам необходимо ещё <<3>>|r)" ,amount, type, more) end,
 	["smithingReq"] 				= function (amount,type, current) return zo_strformat( "Создание потребует <<1>> <<2>> (|c2dff00<<3>> уже имеется|r)"  ,amount, type, current) end,
-	["lootReceived"]				= "Был получен предмет <<1>> (Теперь у вас их <<2>>)",
-	["lootReceivedM"]				= "Был получен предмет <<1>>",
-	["countSurveys"]				= "Исследований в наличии: <<1>>",
-	["countVouchers"]				= "Имеется неполученных ваучеров заказов: <<1>>",
+	["lootReceived"]				= "Item recebido <<1>> (Agora você os tem <<2>>)",
+	["lootReceivedM"]				= "Item recebido <<1>>",
+	["countSurveys"]				= "Pesquisa disponível: <<1>>",
+	["countVouchers"]				= "Existem encomendas de vouchers não cobrados: <<1>>",
 	["includesStorage"] 			= function(type) local a= {"Surveys", "Master Writs"} a = a[type] return zo_strformat("Подсчёт включает <<1>> в домашнем хранилище", a) end,
-	["surveys"]						= "Исследования",
-	["sealedWrits"]					= "Запечатанные заказы",
+	["surveys"]						= "Crafting Surveys",
+	["sealedWrits"]					= "Sealed Writs",
 	["masterWritEnchantToCraft"]	= function(lvl, type, quality, writCraft, writName, generalName) 
-										return zo_strformat("<<t:4>> <<t:5>> <<t:6>>: Создать <<t:1>> Glyph of <<t:2>> с качеством \"<<t:3>>\"",lvl, type, quality,
+										return zo_strformat("<<t:4>> <<t:5>> <<t:6>>: Fabrique um <<t:1>> glifo de <<t:2>> nivel \"<<t:3>>\"",lvl, type, quality,
 											writCraft,writName, generalName) end,
 	["masterWritSmithToCraft"]		= masterWritEnchantToCraft,
-	["withdrawItem"]				= function(amount, link, remaining) return "Аддон Dolgubon's Lazy Writ Crafter забрал из банка предмет \""..link.."\" в количестве: "..amount..". (В банке осталось: "..remaining..")" end,
-	['fullBag']						= "У вас нет свободного места в инвентаре. Пожалуйста, освободите свою сумку.",
-	['masterWritSave']				= "Аддон Dolgubon's Lazy Writ Crafter уберёг вас от случайного принятия мастерского заказа! Идите в настройки, чтобы отключить эту функцию.",
-	['missingLibraries']			= "Аддону Dolgubon's Lazy Writ Crafter требуются следующие отдельно установленные библиотеки. Пожалуйста, скачайте, установите или включите следующие библиотеки: ",
-	['resetWarningMessageText']		= "Сброс ежедневных ремесленных заданий произойдёт через <<1>> часов и <<2>> минут\nВы можете настроить или выключить это предупреждение в настройках",
-	['resetWarningExampleText']		= "Предупреждение будет выглядеть так",
+	["withdrawItem"]				= function(amount, link, remaining) return "Dolgubon's Lazy Writ Crafter retrieved "..amount.." "..link..". ("..remaining.." in bank)" end, -- in Bank for German
+	['fullBag']						= "Você não tem mais espaço. Por favor, esvazie sua bolsa.",
+	['masterWritSave']				= "Dolgubon's Lazy Writ Crafter evitou você de acidentalmente aceitar um mandado de mestre! Vá para o menu de configurações para desativar essa opção.",
+	['missingLibraries']			= "Dolgubon's Lazy Writ Crafter requer as seguintes bibliotecas. Faça o download, instale ou ative estas bibliotecas: ",
+	['resetWarningMessageText']		= "As missões diárias serão resetadas em <<1>> hora e <<2>> minutos\nVocê pode personalizar ou desativar este aviso nas configurações.",
+	['resetWarningExampleText']		= "O aviso será semelhante a este",
 
 }
 
 
 WritCreater.optionStrings = WritCreater.optionStrings or {}
-WritCreater.optionStrings["nowEditing"]						= "Вы изменяете настройку %s"
-WritCreater.optionStrings["accountWide"]					= "На аккаунт"
-WritCreater.optionStrings["characterSpecific"]				= "Для персонажа"
-WritCreater.optionStrings["useCharacterSettings"]			= "Использовать настройки для персонажа"
-WritCreater.optionStrings["useCharacterSettingsTooltip"]	= "Будут использоваться уникальные настройки для конкретного персонажа вместо единых настроек на весь аккаунт."
-WritCreater.optionStrings["style tooltip"]                  			= function (styleName) return zo_strformat("Разрешить использовать стиль <<1>> для создания предметов",styleName) end 
-WritCreater.optionStrings["show craft window"]              			= "Показать окно аддона"
-WritCreater.optionStrings["show craft window tooltip"]    				= "Показывает окно аддона при использовании ремесленных станков"
-WritCreater.optionStrings["autocraft"]                      			= "Автосоздание"
-WritCreater.optionStrings["autocraft tooltip"]              			= "Включение этой настройки активизирует автоматическое создание аддоном необходимых для выполнения заказа предметов при использовании ремесленного станка. Если окно аддона выключено, эта настройка будет включена."
-WritCreater.optionStrings["blackmithing"]                   			= "Кузнечное дело"
-WritCreater.optionStrings["blacksmithing tooltip"]          			= "Включает аддон для Кузнечного дела"
-WritCreater.optionStrings["clothing"]                       			= "Портняжное дело"
-WritCreater.optionStrings["clothing tooltip"]               			= "Включает аддон для Портняжного дела"
-WritCreater.optionStrings["enchanting"]                     			= "Зачарование"
-WritCreater.optionStrings["enchanting tooltip"]             			= "Включает аддон для Зачарования"
-WritCreater.optionStrings["alchemy"]                        			= "Алхимия"
-WritCreater.optionStrings["alchemy tooltip"]   	            			= "Включает аддон для Алхимии"
-WritCreater.optionStrings["provisioning"]                   			= "Снабжение"
-WritCreater.optionStrings["provisioning tooltip"]           			= "Включает аддон для Снабжения"
-WritCreater.optionStrings["woodworking"]                    			= "Столярное дело"
-WritCreater.optionStrings["woodworking tooltip"]            			= "Включает аддон для Столярного дела"
-WritCreater.optionStrings["jewelry crafting"]							= "Ювелирное дело"
-WritCreater.optionStrings["jewelry crafting tooltip"]					= "Включает аддон для Ювелирного дела"
-WritCreater.optionStrings["writ grabbing"]                  			= "Забирать предметы для заказов"
-WritCreater.optionStrings["writ grabbing tooltip"]          			= "Забирает предметы, необходимые для выполнения заказов (напр. Корень нирна, Та и т.д. и т.п.), из банка"
-WritCreater.optionStrings["delay"]                          			= "Задержка снятия"
-WritCreater.optionStrings["delay tooltip"]                  			= "Устанавливает задержку, с которой предметы будут сниматься из банка (миллисекунды)"
-WritCreater.optionStrings["style stone menu"]               			= "Стилевой материал"
-WritCreater.optionStrings["style stone menu tooltip"]       			= "Выберите, какой стилевой материал использовать"
-WritCreater.optionStrings["send data"]                      			= "Отправить данные о награде"
-WritCreater.optionStrings["send data tooltip"]              			= "Отправляет данные о награде, полученной из контейнеров за выполнение заказа. Никакая другая информация не будет отправлена."
-WritCreater.optionStrings["exit when done"]								= "Выход из окна крафта"
-WritCreater.optionStrings["exit when done tooltip"]						= "Закрывает окно крафта, когда будут сделаны все необходимые предметы"
-WritCreater.optionStrings["automatic complete"]							= "Авто-квестинг"
-WritCreater.optionStrings["automatic complete tooltip"]					= "Автоматически принимает и завершает задания, когда имеется всё необходимое"
-WritCreater.optionStrings["new container"]								= "Сохранить статус нового"
-WritCreater.optionStrings["new container tooltip"]						= "Сохраняет статус нового для контейнеров в награду за ремесленные заказы"
-WritCreater.optionStrings["master"]										= "Мастерские заказы"
-WritCreater.optionStrings["master tooltip"]								= "Включает модификацию для Мастерских заказов"
-WritCreater.optionStrings["right click to craft"]						= "ПКМ, чтобы создать"
-WritCreater.optionStrings["right click to craft tooltip"]				= "Если настройка ВКЛЮЧЕНА аддон будет создавать мастерский заказ, который вы ему укажите правым щелчком мыши на запечатанном заказе"
-WritCreater.optionStrings["crafting submenu"]							= "Различные ремесла"
-WritCreater.optionStrings["crafting submenu tooltip"]					= "Включает аддон для отдельных видов ремесла"
-WritCreater.optionStrings["timesavers submenu"]							= "Экономия времени"
-WritCreater.optionStrings["timesavers submenu tooltip"]					= "Различные возможности небольшой экономии времени"
-WritCreater.optionStrings["loot container"]								= "Открыть контейнер при получении"
-WritCreater.optionStrings["loot container tooltip"]						= "Автоматически открывает контейнеры в награду за ремесленные заказы при получении"
-WritCreater.optionStrings["master writ saver"]							= "Сохранять мастерские заказы"
-WritCreater.optionStrings["master writ saver tooltip"]					= "Предотвращает принятие Мастерских заказов"
-WritCreater.optionStrings["loot output"]								= "Предупреждение о ценной награде"
-WritCreater.optionStrings["loot output tooltip"]						= "Предупреждает о получении ценного предмета за заказ"
-WritCreater.optionStrings["autoloot behaviour"]							= "Автолут"
-WritCreater.optionStrings["autoloot behaviour tooltip"]					= "Выберите, должен ли аддон автоматически забирать награду из контейнеров"
-WritCreater.optionStrings["autoloot behaviour choices"]					= {"Копировать настройку из настроек игры", "Включен", "Выключен"}
-WritCreater.optionStrings["container delay"]							= "Задержка автолута"
-WritCreater.optionStrings["container delay tooltip"]					= "Задержка для автоматического сбора награды из контейнеров после их получения"
-WritCreater.optionStrings["hide when done"]								= "Скрыть по завершению"
-WritCreater.optionStrings["hide when done tooltip"]						= "Скрывает окно аддона, когда все предметы будут изготовлены"
-WritCreater.optionStrings['reticleColour'] 								= "Цвет прицела"
-WritCreater.optionStrings['reticleColourTooltip'] 						= "Меняет цвет прицела при наведении на станцию, если для данного ремесла имеется невыполненный или выполненный ремесленный заказ"
-WritCreater.optionStrings['autoCloseBank']								= "Авто-банкинг"
-WritCreater.optionStrings['autoCloseBankTooltip']						= "Автоматические входит в диалог банка и выходит из него, если из банка требуется забрать предметы"
-WritCreater.optionStrings['dailyResetWarn']								= "Предупреждение о сбросе"
-WritCreater.optionStrings['dailyResetWarnTooltip']						= "Выводит предупреждение о приближении времени сброса ремесленных ежедневных заданий"
-WritCreater.optionStrings['dailyResetWarnTime']							= "Минут до сброса"
-WritCreater.optionStrings['dailyResetWarnTimeTooltip']					= "За сколько минут до сброса ежедневных ремесленных заданий должно выводиться предупреждение"
-WritCreater.optionStrings['dailyResetWarnType']							= "Вид предупреждения"
-WritCreater.optionStrings['dailyResetWarnTypeTooltip']					= "Какой вид предупреждения должен быть показан перед сбросом"
-WritCreater.optionStrings['dailyResetWarnTypeChoices']					={ "Нет","Вид 1", "Вид 2", "Вид 3", "Вид 4", "Все"}
-
+WritCreater.optionStrings["nowEditing"]						= "Você está alterando as configurações de %s"
+WritCreater.optionStrings["accountWide"]					= "Em toda a Conta"
+WritCreater.optionStrings["characterSpecific"]				= "Apenas no Personagem"
+WritCreater.optionStrings["useCharacterSettings"]			= "Use as configurações do personagem"
+WritCreater.optionStrings["useCharacterSettingsTooltip"]	= "Use as configurações específicas de um personagem apenas neste personagem."
+WritCreater.optionStrings["style tooltip"]                  = function (styleName) return zo_strformat("Permita que o estilo <<1>>, que usa a pedra do estilo <<2>>, seja usado na fabricação", styleName) end 
+WritCreater.optionStrings["show craft window"]              = "Mostrar janela de fabricação"
+WritCreater.optionStrings["show craft window tooltip"]    	= "Mostrar janela de fabricação quando uma estação de produção está aberta"
+WritCreater.optionStrings["autocraft"]                      = "Auto Fabricação"
+WritCreater.optionStrings["autocraft tooltip"]              = "Selecionar isso fará com que o addon comece a criar imediatamente ao entrar em uma estação de criação. Se a janela não for mostrada, isso será ativado."
+WritCreater.optionStrings["blackmithing"]                   = "Ferraria"
+WritCreater.optionStrings["blacksmithing tooltip"]          = "Ativar o addon para Ferraria"
+WritCreater.optionStrings["clothing"]                       = "Alfaiataria"
+WritCreater.optionStrings["clothing tooltip"]               = "Ativar o addon para Alfaiataria"
+WritCreater.optionStrings["enchanting"]                     = "Encantamento"
+WritCreater.optionStrings["enchanting tooltip"]             = "Ativar o addon para Encantamento"
+WritCreater.optionStrings["alchemy"]                        = "Alquimia"
+WritCreater.optionStrings["alchemy tooltip"]   	            = "Ativar o addon para Alquimia"
+WritCreater.optionStrings["provisioning"]                   = "Cozinha"
+WritCreater.optionStrings["provisioning tooltip"]           = "Ativar o addon para Cozinha"
+WritCreater.optionStrings["woodworking"]                    = "Marcenaria"
+WritCreater.optionStrings["woodworking tooltip"]            = "Ativar o addon para Marcenaria"
+WritCreater.optionStrings["jewelry crafting"]				= "Joalheria"
+WritCreater.optionStrings["jewelry crafting tooltip"]		= "Ativar o addon para Joalheria"
+WritCreater.optionStrings["writ grabbing"]					= "Retirar itens para fabricação"
+WritCreater.optionStrings["writ grabbing tooltip"]			= "Pegue os itens necessários para as encomendas (por exemplo, nirnroot, Ta, etc.) do banco"
+WritCreater.optionStrings["delay"]                          = "Atraso da Retirada do Item"
+WritCreater.optionStrings["delay tooltip"]					= "Quanto tempo esperar antes de pegar itens do banco (milissegundos)"
+WritCreater.optionStrings["style stone menu"]				= "Pedras de Estilo Usadas"
+WritCreater.optionStrings["style stone menu tooltip"]		= "Escolha quais pedras de estilo o addon usará"
+WritCreater.optionStrings["send data"]                      = "Enviar dados de fabricação"
+WritCreater.optionStrings["send data tooltip"]              = "Envie informações sobre as recompensas recebidas de suas caixas de fabricação. Nenhuma outra informação é enviada."
+WritCreater.optionStrings["exit when done"]					= "Sair da janela de fabricação"
+WritCreater.optionStrings["exit when done tooltip"]			= "Saia da janela de fabricação quando todos os itens forem criados"
+WritCreater.optionStrings["automatic complete"]				= "Diálogo de missões automáticos"
+WritCreater.optionStrings["automatic complete tooltip"]		= "Aceita e conclui automaticamente as missões quando você estiver no local apropiado"
+WritCreater.optionStrings["new container"]					= "Mantenha o novo status"
+WritCreater.optionStrings["new container tooltip"]			= "Manter o novo status para contêineres de recompensa de fabricação"
+WritCreater.optionStrings["master"]							= "Master Writs"
+WritCreater.optionStrings["master tooltip"]					= "If this is ON the addon will craft Master Writs you have active"
+WritCreater.optionStrings["right click to craft"]			= "Right Click to Craft"
+WritCreater.optionStrings["right click to craft tooltip"]	= "If this is ON the addon will craft Master Writs you tell it to craft after right clicking a sealed writ"
+WritCreater.optionStrings["crafting submenu"]				= "Trades to Craft"
+WritCreater.optionStrings["crafting submenu tooltip"]		= "Turn the addon off for specific crafts"
+WritCreater.optionStrings["timesavers submenu"]				= "Timesavers"
+WritCreater.optionStrings["timesavers submenu tooltip"]		= "Various small timesavers"
+WritCreater.optionStrings["loot container"]					= "Loot container when received"
+WritCreater.optionStrings["loot container tooltip"]			= "Loot writ reward containers when you receive them"
+WritCreater.optionStrings["master writ saver"]				= "Save Master Writs"
+WritCreater.optionStrings["master writ saver tooltip"]		= "Prevents Master Writs from being accepted"
+WritCreater.optionStrings["loot output"]					= "Valuable Reward Alert"
+WritCreater.optionStrings["loot output tooltip"]			= "Output a message when valuable items are received from a writ"
+WritCreater.optionStrings["autoloot behaviour"]				= "Autoloot Behaviour" -- Note that the following three come early in the settings menu, but becuse they were changed
+WritCreater.optionStrings["autoloot behaviour tooltip"]		= "Choose when the addon will autoloot writ reward containers" -- they are now down below (with untranslated stuff)
+WritCreater.optionStrings["autoloot behaviour choices"]		= {"Copy the setting under the Gameplay settings", "Autoloot", "Never Autoloot"}
+WritCreater.optionStrings["container delay"]				= "Delay Container Looting"
+WritCreater.optionStrings["container delay tooltip"]		= "Delay the autolooting of writ reward containers when you receive them"
+WritCreater.optionStrings["hide when done"]					= "Hide when done"
+WritCreater.optionStrings["hide when done tooltip"]			= "Hide the addon window when all items have been crafted"
+WritCreater.optionStrings['reticleColour']					= "Change Reticle Colour"
+WritCreater.optionStrings['reticleColourTooltip']			= "Changes the Reticle colour if you have an uncompleted or completed writ at the station"
+WritCreater.optionStrings['autoCloseBank']					= "Automatic Bank Dialog"
+WritCreater.optionStrings['autoCloseBankTooltip']			= "Automatically enter and exit the banking dialogue if there are items to be withdrawn"
+WritCreater.optionStrings['dailyResetWarn']					= "Writ Reset Warning"
+WritCreater.optionStrings['dailyResetWarnTooltip']			= "Displays a warning when writs are about to reset for the day"
+WritCreater.optionStrings['dailyResetWarnTime']				= "Minutes Before Reset"
+WritCreater.optionStrings['dailyResetWarnTimeTooltip']		= "How many minutes before the daily reset the warning should be displayed"
+WritCreater.optionStrings['dailyResetWarnType']				= "Daily Reset Warning"
+WritCreater.optionStrings['dailyResetWarnTypeTooltip']		= "What type of warning should be displayed when the daily reset is about to occur"
+WritCreater.optionStrings['dailyResetWarnTypeChoices']		= { "None","Type 1", "Type 2", "Type 3", "Type 4", "All"}
+WritCreater.optionStrings['stealingProtection']				= "Stealing Protection"
+WritCreater.optionStrings['stealingProtectionTooltip']		= "Prevent you from stealing while near a writ turn in location"
+WritCreater.optionStrings['jewelryWritDestroy']				= "Destroy Jewelry Sealed Writs"
+WritCreater.optionStrings['jewelryWritDestroyTooltip']		= "Destroy looted Jewelry Sealed writs. WARNING: There is no prompt!"
+WritCreater.optionStrings['jewelryWritDestroyWarning']		= "WARNING: There is no prompt when destroying jewelry writs! Enable at your own risk!"
+WritCreater.optionStrings['noDELETEConfirmJewelry']			= "Easy Jewelry Destruction"
+WritCreater.optionStrings['noDELETEConfirmJewelryTooltip']	= "Automatically add the DELETE text confirmation to the delete jewelry dialog box"
 
 -- Languages/en.lua translate -- start from line 69
 
@@ -471,11 +477,11 @@ local craftInfo =
 			["match"] = --exact!!! The names of glyphs. The prefix (in English) So trifling glyph of magicka, for example
 			{
 				 [1] = {"insignificante", 45855},
-				 [2] = {"inferior",45856}, -- inferior?
+				 [2] = {"rudimentar",45856}, -- inferior?
 				 [3] = {"pequeno",45857},
 				 [4] = {"leve",45806},
 				 [5] = {"menor",45807},
-				 [6] = {"inferior",45808}, -- baixo?
+				 [6] = {"reduzido",45808}, -- baixo?
 				 [7] = {"moderado",45809},
 				 [8] = {"médio",45810},
 				 [9] = {"forte",45811},
@@ -484,8 +490,8 @@ local craftInfo =
 				[12] = {"grandioso",45814},
 				[13] = {"esplêndido",45815},
 				[14] = {"monumental",45816},
-				[15] = {"Verdadeiramente",{68341,68340,},},
-				[16] = {"Esplêndido",{64509,64508,},},
+				[15] = {"verdadeiramente",{68341,68340,},},
+				[16] = {"glorioso",{64509,64508,},},
 				
 			},
 			["quality"] = -- !!!ДЛЯ РУН!!!
@@ -526,22 +532,22 @@ function WritCreater.langPotencyNames() -- Vital
 	--exact!! Also, these are all the positive runestones - no negatives needed.
 	local potencyNames = 
 	{
-		[1] = "Jora", --Lowest potency stone lvl
-		[2] = "Porade",
-		[3] = "Jera",
-		[4] = "Jejora",
-		[5] = "Odra",
-		[6] = "Pojora",
-		[7] = "Edora",
-		[8] = "Jaera",
-		[9] = "Pora",
-		[10]= "Denara",
-		[11]= "Rera",
-		[12]= "Derado",
-		[13]= "Rekura",
-		[14]= "Kura",
-		[15]= "Rejera",
-		[16]= "Repora", --v16 potency stone
+		 [1] = "Jora", --Lowest potency stone lvl
+		 [2] = "Porade",
+		 [3] = "Jera",
+		 [4] = "Jejora",
+		 [5] = "Odra",
+		 [6] = "Pojora",
+		 [7] = "Edora",
+		 [8] = "Jaera",
+		 [9] = "Pora",
+		[10] = "Denara",
+		[11] = "Rera",
+		[12] = "Derado",
+		[13] = "Rekura",
+		[14] = "Kura",
+		[15] = "Rejera",
+		[16] = "Repora", --v16 potency stone
 	}
 	return potencyNames
 end
@@ -692,22 +698,16 @@ function WritCreater.langStationNames()
 	}
 end
 
--- What is this??! This is just a fun 'easter egg' that is never activated on easter.
--- Replaces mat names with a random DivineMats on Halloween, New Year's, and April Fools day. You don't need this many! :D
--- Translate it or don't, completely up to you. But if you don't translate it, replace the body of 
+-- O que é isso??! Este é apenas um divertido 'easter egg'.
+-- Substitui os nomes dos materiais aleatoriamente pelos DivineMats no Dia das Bruxas, Ano Novo e Dia da Mentira.
+-- se não for usar faça a função
 -- shouldDivinityprotocolbeactivatednowornotitshouldbeallthetimebutwhateveritlljustbeforabit()
--- with just a return false. (This will prevent it from ever activating. Also, if you're a user and don't like this,
--- you're boring, and also that's how you can disable it. )
-local DivineMats =
-{
-	{"Ghost Eyes", "Vampire Hearts", "Werewolf Claws", "'Special' Candy", "Chopped Hands", "Zombie Guts", "Bat Livers", "Lizard Brains", "Witches Hats", "Distilled Boos", "Singing Toads"},
-	{"Sock Puppets", "Jester Hats","Otter Noses",  "|cFFC300Tempering Alloys|r", "Red Herrings", "Rotten Tomatoes","Fake Oil of Life", "Crowned Imposters", "Mudpies"},
-	{"Fireworks", "Presents", "Crackers", "Reindeer Bells", "Elven Hats", "Pine Needles", "Essences of Time", "Ephemeral Lights"},
+-- retornar false;
+local DivineMats = {
+	{"Ghost Eyes", "Vampire Hearts", "Werewolf Claws", "'Special' Candy", "Chopped Hands", "Zombie Guts", "Bat Livers", "Lizard Brains", "Witches Hats", "Distilled Boos", "Singing Toads"}, --Dia das Bruxas
+	{"Sock Puppets", "Jester Hats","Otter Noses",  "|cFFC300Tempering Alloys|r", "Red Herrings", "Rotten Tomatoes","Fake Oil of Life", "Crowned Imposters", "Mudpies"}, --Dia da Mentira
+	{"Fireworks", "Presents", "Crackers", "Reindeer Bells", "Elven Hats", "Pine Needles", "Essences of Time", "Ephemeral Lights"}, --Ano Novo
 }
-
--- confetti?
--- random sounds?
--- 
 
 local function shouldDivinityprotocolbeactivatednowornotitshouldbeallthetimebutwhateveritlljustbeforabit()
 	if GetDate()%10000 == 1031 then return 1 end
@@ -716,7 +716,11 @@ local function shouldDivinityprotocolbeactivatednowornotitshouldbeallthetimebutw
 	return false
 end
 
-local function wellWeShouldUseADivineMatButWeHaveNoClueWhichOneItIsSoWeNeedToAskTheGodsWhichDivineMatShouldBeUsed() local a= math.random(1, #DivineMats ) return DivineMats[a] end
+local function wellWeShouldUseADivineMatButWeHaveNoClueWhichOneItIsSoWeNeedToAskTheGodsWhichDivineMatShouldBeUsed() 
+	local a = math.random(1, #DivineMats ) 
+	return DivineMats[a] 
+end
+
 local l = shouldDivinityprotocolbeactivatednowornotitshouldbeallthetimebutwhateveritlljustbeforabit()
 
 if l then
@@ -742,8 +746,8 @@ local function enableAlternateUniverse(override)
 	if shouldDivinityprotocolbeactivatednowornotitshouldbeallthetimebutwhateveritlljustbeforabit() == 2 or override then
 	--if true then
 		local stations =
-			{"Кузница", "Портняжный станок", "Стол для зачарования", 
-			"Алхимическая станция", "Огонь для приготовления пищи", "Столярный верстак", "Ювелирная станция", "Станция создания нарядов", "Станция трансмутации", "Дорожное святилище"}
+			{"Blacksmithing Station", "Clothing Station", "Enchanting Table",
+			"Alchemy Station",  "Cooking Fire", "Woodworking Station","Jewelry Crafting Station",  "Outfit Station", "Transmute Station", "Wayshrine"}
 			local stationNames =  -- in the comments are other names that were also considered, though not all were considered seriously
 			{"Тяжелый металл", -- Popcorn Machine , Skyforge, Heavy Metal Station, Metal Clockwork Solid, Wightsmithing Station., Coyote Stopper
 			"Чулочная фабрика", -- Sock Distribution Center, Soul-Shriven Sock Station, Grandma's Sock Knitting Station, Knits and Pieces, Sock Knitting Station
@@ -884,13 +888,13 @@ end
 -- [tooltip ] = "Verstecke das Writ Crafter Fenster an der Handwerksstation automatisch, nachdem die Gegenstände hergestellt wurden"
 
 function WritCreater.langWritRewardBoxes () return {
-	[CRAFTING_TYPE_ALCHEMY] = "сосуд алхимика",
-	[CRAFTING_TYPE_ENCHANTING] = "шкатулка зачарователя",
-	[CRAFTING_TYPE_PROVISIONING] = "сумка снабженца",
-	[CRAFTING_TYPE_BLACKSMITHING] = "ящик кузнеца",
-	[CRAFTING_TYPE_CLOTHIER] = "ранец портного",
-	[CRAFTING_TYPE_WOODWORKING] = "футляр столяра",
-	[CRAFTING_TYPE_JEWELRYCRAFTING] = "шкатулка ювелира",
+	[CRAFTING_TYPE_ALCHEMY] = "Recipiente de Alquimista",
+	[CRAFTING_TYPE_ENCHANTING] = "Cofre do Encantador",
+	[CRAFTING_TYPE_PROVISIONING] = "Pacote de Culinária",
+	[CRAFTING_TYPE_BLACKSMITHING] = "Caixa de Ferreiro",
+	[CRAFTING_TYPE_CLOTHIER] = "Sacola de Alfaiate",
+	[CRAFTING_TYPE_WOODWORKING] = "Estojo de Marceneiro",
+	[CRAFTING_TYPE_JEWELRYCRAFTING] = "Cofre de Joalheria",
 	[8] = "Carregamento",
 }
 end
@@ -903,8 +907,8 @@ end
 WritCreater.optionStrings["alternate universe"]				= "Отключить 1-апрельские шутки"
 WritCreater.optionStrings["alternate universe tooltip"] 	= "Отключает переименовывание ремесленных станций, ремесла и прочих интерактивных предметов"
 
-WritCreater.lang = "ru"
-WritCreater.langIsMasterWritSupported = true
+WritCreater.lang = "br"
+WritCreater.langIsMasterWritSupported = false
 
 --[[
 SLASH_COMMANDS['/opencontainers'] = function()local a=WritCreater.langWritRewardBoxes() for i=1,200 do for j=1,6 do if a[j]==GetItemName(1,i) then if IsProtectedFunction("endUseItem") then

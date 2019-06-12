@@ -4,6 +4,6 @@
 ## Author: @rodrigo5
 ## Version: 0.0.1
 ## AddOnVersion: 00001
-## DependsOn: DolgubonsLazyWritCreator
+## DependsOn: DolgubonsLazyWritCreator Eso|c1bc426B|cead519R|r
 
 $(language).lua
