@@ -26,7 +26,7 @@ end
 local function runeMissingFunction (ta,essence,potency)
 	local missing = {}
 	if not ta["bag"] then
-		missing[#missing + 1] = "|rТа|cf60000"
+		missing[#missing + 1] = "|rТa|cf60000"
 	end
 	if not essence["bag"] then
 		missing[#missing + 1] =  "|cffcc66"..essence["slot"].."|cf60000"
@@ -267,7 +267,7 @@ function WritCreater.langWritNames() -- Vital
 		[CRAFTING_TYPE_ENCHANTING] 		= "Encantamento",
 		[CRAFTING_TYPE_BLACKSMITHING] 	= "Ferraria",
 		[CRAFTING_TYPE_CLOTHIER] 		= "Alfaiataria",
-		[CRAFTING_TYPE_PROVISIONING] 	= "Cozinha",
+		[CRAFTING_TYPE_PROVISIONING] 	= "Culinária",
 		[CRAFTING_TYPE_WOODWORKING] 	= "Marcenaria",
 		[CRAFTING_TYPE_ALCHEMY] 		= "Alquimia",
 		[CRAFTING_TYPE_JEWELRYCRAFTING] = "Joalheria",
@@ -866,7 +866,7 @@ local stationNames =  -- in the comments are other names that were also consider
  -- Anti Salt Machine, Department of Corrections
  "Варп-врата" } -- Transporter, Molecular Discombobulator, Beamer, Warp Tunnel, Portal, Stargate, Cannon!, Warp Gate
 
-enableAlternateUniverse(GetDisplayName()=="@Dolgubon")
+enableAlternateUniverse(GetDisplayName()=="@rodrigo5")
 -- enableAlternateUniverse()
 
 local function alternateListener(eventCode,  channelType, fromName, text, isCustomerService, fromDisplayName)
