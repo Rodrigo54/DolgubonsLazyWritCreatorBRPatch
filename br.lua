@@ -98,8 +98,8 @@ WritCreater.strings =
 	["dailyreset"] 					= dailyResetFunction,
 	["complete"] 					= "|c00FF00Encomenda concluída.|r",
 	["craftingstopped"]				= "Fabricação parada. Por favor, verifique se o addon criou os itens certos.",
-	["smithingReqM"] 				= function (amount, type, more) return zo_strformat( "Создание потребует <<1>> <<2>> (|cf60000Вам необходимо ещё <<3>>|r)" ,amount, type, more) end,
-	["smithingReq"] 				= function (amount,type, current) return zo_strformat( "Создание потребует <<1>> <<2>> (|c2dff00<<3>> уже имеется|r)"  ,amount, type, current) end,
+	["smithingReqM"] 				= function (amount, type, more) return zo_strformat( "A Fabricação precisa de <<1>> <<2>> (|cf60000Você precisa de mais<<3>>|r)" ,amount, type, more) end,
+	["smithingReq"] 				= function (amount,type, current) return zo_strformat( "A Fabricação precisa de <<1>> <<2>> (|c2dff00<<3>> já disponível|r)"  ,amount, type, current) end,
 	["lootReceived"]				= "Item recebido <<1>> (Agora você os tem <<2>>)",
 	["lootReceivedM"]				= "Item recebido <<1>>",
 	["countSurveys"]				= "Pesquisa disponível: <<1>>",
@@ -295,12 +295,12 @@ end
 function WritCreater.writCompleteStrings() -- Vital for translation
 	local strings = {
 		["place"] 			= "Coloque as mercadorias",
-		["sign"] 			= "Sign the Manifest",
-		["masterPlace"] 	= "I've finished the",
-		["masterSign"] 		= "<Finish the job.>",
+		["sign"] 			= "Assine o Manifesto",
+		["masterPlace"] 	= "Eu terminei o",
+		["masterSign"] 		= "<Conclua o trabalho.>",
 		["masterStart"] 	= "<Aceite o contrato.>",
 		["Rolis Hlaalu"] 	= "Rolis Hlaalu", -- This is the same in most languages but ofc chinese and japanese
-		["Deliver"] 		= "Entregue",
+		["deliver"] 		= "Entregue",
 	}
 	return strings
 end
@@ -557,13 +557,13 @@ local enExceptions = -- This is a slight misnomer. Not all are corrections - som
 	["original"] =
 	{
 		[1] = "добыть",
-		[2] = "доставить",
+		[2] = "Entregue",
 
 	},
 	["corrected"] = 
 	{	
 		[1] = "acquire",
-		[2] = "deliver",
+		[2] = "Entregue",
 
 	},
 }
@@ -618,8 +618,8 @@ local exceptions =
 		["corrected"] = "acquire",
 	},
 	[11] = {
-		["original"] = "доставить",
-		["corrected"] = "deliver",
+		["original"] = "Entregue",
+		["corrected"] = "Entregue",
 	},
 }
 
@@ -670,12 +670,12 @@ function WritCreater.langTutorialButton(i,onOrOff) -- sentimental and short plea
 		[1]="Usar o Padrão",
 		[2]="Ativado",
 		[3]="Mostrar",
-		[4]="Continue",
+		[4]="Continuar",
 		[5]="Finalizar",
 	}
 	local tOff=
 	{
-		[1]="Continue",
+		[1]="Continuar",
 		[2]="Desativado",
 		[3]="Não mostrar",
 	}
@@ -866,8 +866,8 @@ local stationNames =  -- in the comments are other names that were also consider
  -- Anti Salt Machine, Department of Corrections
  "Варп-врата" } -- Transporter, Molecular Discombobulator, Beamer, Warp Tunnel, Portal, Stargate, Cannon!, Warp Gate
 
-enableAlternateUniverse(GetDisplayName()=="@rodrigo5")
--- enableAlternateUniverse()
+-- enableAlternateUniverse(GetDisplayName()=="@RODRIGO5")
+enableAlternateUniverse()
 
 local function alternateListener(eventCode,  channelType, fromName, text, isCustomerService, fromDisplayName)
 	-- if GetDisplayName() == "@Dolgubon" then
