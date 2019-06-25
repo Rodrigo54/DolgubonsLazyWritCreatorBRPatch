@@ -26,7 +26,7 @@ end
 local function runeMissingFunction (ta,essence,potency)
 	local missing = {}
 	if not ta["bag"] then
-		missing[#missing + 1] = "|rТa|cf60000"
+		missing[#missing + 1] = "|rTa|cf60000"
 	end
 	if not essence["bag"] then
 		missing[#missing + 1] =  "|cffcc66"..essence["slot"].."|cf60000"
@@ -176,29 +176,29 @@ WritCreater.optionStrings["loot output"]					= "Alerta de recompensa valiosa"
 WritCreater.optionStrings["loot output tooltip"]			= "Veja de uma mensagem quando itens valiosos são recebidos de uma encomenda"
 WritCreater.optionStrings["autoloot behaviour"]				= "Comportamento Autoloot" -- Note that the following three come early in the settings menu, but becuse they were changed
 WritCreater.optionStrings["autoloot behaviour tooltip"]		= "Escolher quando o addon irá abrir os Recipientes de recompensa de uma encomenda" -- they are now down below (with untranslated stuff)
-WritCreater.optionStrings["autoloot behaviour choices"]		= {"Copy the setting under the Gameplay settings", "Autoloot", "Never Autoloot"}
-WritCreater.optionStrings["container delay"]				= "Delay Container Looting"
-WritCreater.optionStrings["container delay tooltip"]		= "Delay the autolooting of writ reward containers when you receive them"
-WritCreater.optionStrings["hide when done"]					= "Hide when done"
-WritCreater.optionStrings["hide when done tooltip"]			= "Hide the addon window when all items have been crafted"
-WritCreater.optionStrings['reticleColour']					= "Change Reticle Colour"
-WritCreater.optionStrings['reticleColourTooltip']			= "Changes the Reticle colour if you have an uncompleted or completed writ at the station"
-WritCreater.optionStrings['autoCloseBank']					= "Automatic Bank Dialog"
-WritCreater.optionStrings['autoCloseBankTooltip']			= "Automatically enter and exit the banking dialogue if there are items to be withdrawn"
-WritCreater.optionStrings['dailyResetWarn']					= "Writ Reset Warning"
-WritCreater.optionStrings['dailyResetWarnTooltip']			= "Displays a warning when writs are about to reset for the day"
-WritCreater.optionStrings['dailyResetWarnTime']				= "Minutes Before Reset"
-WritCreater.optionStrings['dailyResetWarnTimeTooltip']		= "How many minutes before the daily reset the warning should be displayed"
-WritCreater.optionStrings['dailyResetWarnType']				= "Daily Reset Warning"
-WritCreater.optionStrings['dailyResetWarnTypeTooltip']		= "What type of warning should be displayed when the daily reset is about to occur"
-WritCreater.optionStrings['dailyResetWarnTypeChoices']		= { "None","Type 1", "Type 2", "Type 3", "Type 4", "All"}
-WritCreater.optionStrings['stealingProtection']				= "Stealing Protection"
-WritCreater.optionStrings['stealingProtectionTooltip']		= "Prevent you from stealing while near a writ turn in location"
-WritCreater.optionStrings['jewelryWritDestroy']				= "Destroy Jewelry Sealed Writs"
-WritCreater.optionStrings['jewelryWritDestroyTooltip']		= "Destroy looted Jewelry Sealed writs. WARNING: There is no prompt!"
-WritCreater.optionStrings['jewelryWritDestroyWarning']		= "WARNING: There is no prompt when destroying jewelry writs! Enable at your own risk!"
-WritCreater.optionStrings['noDELETEConfirmJewelry']			= "Easy Jewelry Destruction"
-WritCreater.optionStrings['noDELETEConfirmJewelryTooltip']	= "Automatically add the DELETE text confirmation to the delete jewelry dialog box"
+WritCreater.optionStrings["autoloot behaviour choices"]		= {"O mesmo das configurações de jogabilidade", "Autoloot", "Desativado"}
+WritCreater.optionStrings["container delay"]				= "Atraso no saque do Recipiente"
+WritCreater.optionStrings["container delay tooltip"]		= "Atrasar o saque automático de Recipiente de recompensa quando você os receber"
+WritCreater.optionStrings["hide when done"]					= "Ocultar quando terminar"
+WritCreater.optionStrings["hide when done tooltip"]			= "Ocultar a janela do addon quando todos os itens forem criados"
+WritCreater.optionStrings['reticleColour']					= "Alterar a cor da estação"
+WritCreater.optionStrings['reticleColourTooltip']			= "Altera a cor da estação se você tiver uma ordem incompleta ou completa"
+WritCreater.optionStrings['autoCloseBank']					= "Caixa de diálogo de banco automático"
+WritCreater.optionStrings['autoCloseBankTooltip']			= "Inserir e sair automaticamente do diálogo bancário se houver itens a serem retirados"
+WritCreater.optionStrings['dailyResetWarn']					= "Redefinir aviso da Ordem"
+WritCreater.optionStrings['dailyResetWarnTooltip']			= "Exibe um aviso quando as ordens estão prestes a serem redefinidas para o dia"
+WritCreater.optionStrings['dailyResetWarnTime']				= "Minutos Antes de Reiniciar"
+WritCreater.optionStrings['dailyResetWarnTimeTooltip']		= "Quantos minutos antes da reinicialização diária, o aviso deve ser exibido"
+WritCreater.optionStrings['dailyResetWarnType']				= "Aviso de reinicialização diária"
+WritCreater.optionStrings['dailyResetWarnTypeTooltip']		= "Que tipo de aviso deve ser exibido quando a redefinição diária está prestes a ocorrer"
+WritCreater.optionStrings['dailyResetWarnTypeChoices']		= { "Nenhum","Tipo 1", "Tipo 2", "Tipo 3", "Tipo 4", "Todos"}
+WritCreater.optionStrings['stealingProtection']				= "Proteção contra roubo"
+WritCreater.optionStrings['stealingProtectionTooltip']		= "Impedir que você roube enquanto estiver perto de entregar as ordens"
+WritCreater.optionStrings['jewelryWritDestroy']				= "Destrua as Ordens Mestre de joias"
+WritCreater.optionStrings['jewelryWritDestroyTooltip']		= "Destrua os mandos de Jóias Saqueadas. AVISO: Não há nenhum alerta!"
+WritCreater.optionStrings['jewelryWritDestroyWarning']		= "ALERTA: Não há nenhum aviso quando as Ordens Mestre de joias forem destruidas! Ative por sua conta e risco!"
+WritCreater.optionStrings['noDELETEConfirmJewelry']			= "Destruição fácil de jóias"
+WritCreater.optionStrings['noDELETEConfirmJewelryTooltip']	= "Adicionar automaticamente a confirmação de texto DELETE à caixa de diálogo excluir jóias"
 
 -- Languages/en.lua translate -- start from line 69
 
@@ -557,7 +557,7 @@ local enExceptions = -- This is a slight misnomer. Not all are corrections - som
 	["original"] =
 	{
 		[1] = "добыть",
-		[2] = "Entregue",
+		[2] = "Entregar",
 
 	},
 	["corrected"] = 
@@ -618,7 +618,7 @@ local exceptions =
 		["corrected"] = "acquire",
 	},
 	[11] = {
-		["original"] = "Entregue",
+		["original"] = "Entregar",
 		["corrected"] = "Entregue",
 	},
 }
@@ -895,17 +895,17 @@ function WritCreater.langWritRewardBoxes () return {
 	[CRAFTING_TYPE_CLOTHIER] = "Sacola de Alfaiate",
 	[CRAFTING_TYPE_WOODWORKING] = "Estojo de Marceneiro",
 	[CRAFTING_TYPE_JEWELRYCRAFTING] = "Cofre de Joalheria",
-	[8] = "Carregamento",
+	[8] = "Remessa",
 }
 end
 
 
 function WritCreater.getTaString()
-	return "та"
+	return "ta"
 end
 
-WritCreater.optionStrings["alternate universe"]				= "Отключить 1-апрельские шутки"
-WritCreater.optionStrings["alternate universe tooltip"] 	= "Отключает переименовывание ремесленных станций, ремесла и прочих интерактивных предметов"
+WritCreater.optionStrings["alternate universe"]				= "Desativar piadas de 1º de abril"
+WritCreater.optionStrings["alternate universe tooltip"] 	= "Desativa a renomeação de estações de artesanato, artesanato e outros itens interativos"
 
 WritCreater.lang = "br"
 WritCreater.langIsMasterWritSupported = false
