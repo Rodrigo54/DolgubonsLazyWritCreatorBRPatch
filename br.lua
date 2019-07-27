@@ -300,7 +300,7 @@ function WritCreater.writCompleteStrings() -- Vital for translation
 		["masterSign"] 		= "<Conclua o trabalho.>",
 		["masterStart"] 	= "<Aceite o contrato.>",
 		["Rolis Hlaalu"] 	= "Rolis Hlaalu", -- This is the same in most languages but ofc chinese and japanese
-		["deliver"] 		= "Entregue",
+		["Deliver"] 		= "Entregue",
 	}
 	return strings
 end
